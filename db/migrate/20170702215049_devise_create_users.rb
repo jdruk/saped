@@ -33,9 +33,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :cpf
       t.string :matriculation
-      t.boolean :user_type
-      t.integer :participation
-      t.boolean :pay
+      t.boolean :user_type, default: false
+      t.integer :participation, default: 1
+      t.boolean :pay, default: 0
       t.references :theme
       t.references :course
 

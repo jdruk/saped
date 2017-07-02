@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20170702215611) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(version: 20170702215611) do
     t.string   "name"
     t.string   "cpf"
     t.string   "matriculation"
-    t.boolean  "user_type"
-    t.integer  "participation"
-    t.boolean  "pay"
+    t.boolean  "user_type",              default: false
+    t.integer  "participation",          default: 1
+    t.boolean  "pay",                    default: false
     t.integer  "theme_id"
     t.integer  "course_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "article"
   end
 
