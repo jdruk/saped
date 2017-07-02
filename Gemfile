@@ -15,6 +15,11 @@ group :development, :test do
   gem 'byebug'
 end
 
+# add manualmente
+gem 'devise'
+gem 'pundit'
+gem 'carrierwave', '~> 1.0'
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
