@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @theme.name %>
-</p>
-
-<%= link_to 'Edit', edit_theme_path(@theme) %> |
-<%= link_to 'Back', themes_path %>
+<div class="ui centered grid container">
+  <div class="five wide column">
+    <p>
+      <strong>Nome:</strong>
+      <%= @theme.name %>
+    </p>
+    
+    <%= link_to 'Editar', edit_theme_path(@theme), class: 'ui button' %> 
+    <%= link_to 'Voltar', themes_path, class: 'ui button' %>
+  </div>
+</div>

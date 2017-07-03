@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
-
-<p>
-  <strong>Panelist:</strong>
-  <%= @course.panelist %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<div class="ui centered grid container">
+  <div class="five wide column">
+    <p>
+      <strong>Nome:</strong>
+      <%= @course.name %>
+    </p>
+    
+    <p>
+      <strong>Palestra:</strong>
+      <%= @course.panelist %>
+    </p>
+    
+    <%= link_to 'Editar', edit_course_path(@course), class: 'ui button' %> 
+    <%= link_to 'Voltar', courses_path, class: 'ui button' %>
+  </div>
+</div>

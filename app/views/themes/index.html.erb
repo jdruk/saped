@@ -1,27 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="ui centered grid container">
+    <div class="five large column">
+      <h1>Lista de temas</h1>
+      
+      <table class="ui table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @themes.each do |theme| %>
+            <tr>
+              <td><%= theme.name %></td>
+              <td><%= link_to 'Show', theme, class: 'ui button' %></td>
+              <td><%= link_to 'Editar', edit_theme_path(theme), class: 'ui button' %></td>
+              <td><%= link_to 'Excluir', theme, method: :delete, data: { confirm: 'Você tem certeza?' },class: 'ui button red' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <br>
+      <%= link_to 'Novo Tema', new_theme_path, class: 'ui button teal' %>
 
-<h1>Listing Themes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @themes.each do |theme| %>
-      <tr>
-        <td><%= theme.name %></td>
-        <td><%= link_to 'Show', theme %></td>
-        <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
-        <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Theme', new_theme_path %>
+  </div>
+</div>
