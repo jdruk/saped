@@ -136,45 +136,5 @@
     </div>
   </div>
 
-
-<div class="ui modal">
-  <div class="header">Entrar</div>
-  <div class="content">
-    <div class="ui centered grid container">
-      <div class="five wide column">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui form'}) do |f| %>
-          <div class="field">
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password %>
-            <%= f.password_field :password, autocomplete: "off" %>
-          </div>
-
-          <% if devise_mapping.rememberable? -%>
-            <div class="inline field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end %> 
-
-          <div class="actions">
-            <%= f.submit "Entrar", class: 'ui button teal' %>
-          </div>
-        <% end %>
-        <%= render "users/shared/links" %>
-      </div>
-    </div>
-  </div>
-  <div class="actions">
-  </div>
-</div>
-<script>
-    $(document).ready(function(){
-    $("#login").click(function(){
-        $('.ui.modal').modal('show');
-    });
-});
-</script>
+<!-- Modal user -->
+<%= render 'layouts/user' %>

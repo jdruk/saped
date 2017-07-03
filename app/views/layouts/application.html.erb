@@ -13,37 +13,32 @@
   <%= yield :head %>
 </head>
 <body>
-<div class="pusher">
+
 <!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <a class="active item">Home</a>
-  <a class="item">Work</a>
-  <a class="item">Company</a>
-  <a class="item">Careers</a>
-  <a class="item">Login</a>
-  <a class="item">Signup</a>
-</div>
+  <div class="ui vertical inverted sidebar menu">
+    <%= render 'layouts/top_menu' %>
+  </div>
   
+<div class="pusher">  
 <!-- Page Contents -->
   <div class="ui inverted vertical masthead center aligned segment">
-  
       <div class="ui container">
         <div class="ui large secondary inverted pointing menu">
           <a class="toc item">
             <i class="sidebar icon"></i>
           </a>
-          <a class="active item">Home</a>
-          <a class="item">Work</a>
-          <a class="item">Company</a>
-          <a class="item">Careers</a>
+          <%= render 'layouts/top_menu' %>
           <div class="right item">
-            <a class="ui inverted button" id='login'>Log in</a>
-            <a class="ui inverted button">Sign Up</a>
+            <a class="ui inverted button" id='login'>Login</a>
+            <%= link_to new_user_registration_path do %>
+              <div class="ui inverted button">Cadastro</div>
+            <% end %>
           </div>
         </div>
       </div>
   </div>
-<%= yield %>
+  
+  <%= yield %>
 
 <!-- Footer Contents -->
   <div class="ui inverted vertical footer segment">
