@@ -36,8 +36,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.boolean :admin, default: false
       t.integer :participation, default: 1
       t.boolean :pay, default: 0
-      t.references :theme
-      t.references :course
+      t.references :theme, default: 1
+      t.references :course, default: 1
 
       t.timestamps null: false
     end

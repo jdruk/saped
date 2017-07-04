@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702215611) do
+ActiveRecord::Schema.define(version: 20170704001805) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
     t.string   "panelist"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,17 +46,18 @@ ActiveRecord::Schema.define(version: 20170702215611) do
     t.string   "name"
     t.string   "cpf"
     t.string   "matriculation"
-    t.boolean  "user_type",              default: false
-    t.integer  "participation",          default: 1
+    t.boolean  "admin",                  default: false
     t.boolean  "pay",                    default: false
-    t.integer  "theme_id"
-    t.integer  "course_id"
+    t.integer  "theme_id",               default: 1
+    t.integer  "course_id",              default: 1
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "article"
+    t.integer  "participation_id",       default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["participation_id"], name: "index_users_on_participation_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

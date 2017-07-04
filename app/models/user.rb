@@ -5,4 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   mount_uploader :article, ArticleUploader
+  
+  # Regras de négocio
+  validates :name, presence: true
+  validates :cpf, presence: true
+  
+  # Relacionamentos
+  belongs_to :course
+  belongs_to :theme
+  
 end

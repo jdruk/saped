@@ -34,23 +34,67 @@
     </div>
     
     <div class="field">
+      <div class="inline fields">
+      <label for="discente">Discente da UFPI?</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input id='discente_sim' name="discente" tabindex="0" class="hidden" type="radio" >
+          <label>Sim</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="discente" tabindex="0" class="hidden" type="radio" checked="" >
+          <label>Não</label>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script>
+      $('.ui.radio.checkbox').checkbox();
+      
+      $( ".ui.radio.checkbox" ).change(function() {
+        if($("#discente_sim").is(":checked")){
+          $("#matricula").css("display", "initial");
+        }else{
+          $("#matricula").css("display", 'none');
+        }
+      });
+      
+    </script>
+    
+    <div id="matricula" class="field" style="display: none;">
       <%= f.label :matriculation %><br />
       <%= f.text_field :matriculation %>
     </div>
     
+    <!-- tem que informar os tipos -->
     <div class="field">
       <%= f.label :participation %><br />
       <%= f.text_field :participation %>
     </div>
+   
+    <script>
+      $( "#test" ).change( function(){
+        var value = $( "#test" ).val();
+        // valores acima disso representa apresentação e necessariamente um tema
+        if(value >= 1){
+          $("#tema").css("display", "initial");
+        }else{
+          $("#tema").css("display", 'none');
+        } 
+      });
+      
+    </script>
     
-    <div class="field">
+    <div id="tema" class="field" style="display: none;" >
       <%= f.label :theme %><br />
       <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {:class=>'ui dropdown'}) %>
     </div>
     
     <div class="field">
       <%= f.label :course %><br />
-      <%= f.collection_select(:course_id, Course.avalaible, :id, :name, {}, {:class=>'ui dropdown'}) %>
+      <%= f.collection_select(:course_id, Course.avalaible, :id, :name, { prompt: 'Curso'}, {:class=>''}) %>
     </div>
     
     <div class="actions">
