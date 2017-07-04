@@ -68,17 +68,16 @@
       <%= f.text_field :matriculation %>
     </div>
     
-    <!-- tem que informar os tipos -->
-    <div class="field">
+    <!-- tem que informar os tipos com popup ou algo do tipo -->
+    <div id="participacao" class="field" >
       <%= f.label :participation %><br />
-      <%= f.text_field :participation %>
-    </div>
-   
+      <%= f.collection_select(:participation_id, Participation.all, :id, :name, {prompt: 'Tipo de participacao'}, {:class=>'ui dropdown'}) %>
+    </div> 
     <script>
-      $( "#test" ).change( function(){
-        var value = $( "#test" ).val();
+      $( "#user_participation_id" ).change( function(){
+        var value = $( "#user_participation_id" ).val();
         // valores acima disso representa apresentação e necessariamente um tema
-        if(value >= 1){
+        if(value == 3){
           $("#tema").css("display", "initial");
         }else{
           $("#tema").css("display", 'none');
@@ -89,12 +88,12 @@
     
     <div id="tema" class="field" style="display: none;" >
       <%= f.label :theme %><br />
-      <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {:class=>'ui dropdown'}) %>
+      <%= f.collection_select(:theme_id, Theme.all, :id, :name, {prompt: 'Tema da apresentação'}, {:class=>'ui dropdown'}) %>
     </div>
     
     <div class="field">
       <%= f.label :course %><br />
-      <%= f.collection_select(:course_id, Course.avalaible, :id, :name, { prompt: 'Curso'}, {:class=>''}) %>
+      <%= f.collection_select(:course_id, Course.avalaible, :id, :name, { prompt: 'Curso'}, {:class=>'ui dropdown'}) %>
     </div>
     
     <div class="actions">
