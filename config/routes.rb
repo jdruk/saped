@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   # dashboard
   get 'dashboard', to: 'home#dashboard', as: :dashboard
   get 'admin_dashboard', to: 'home#admin_dashboard', as: :admin_dashboard
+  get 'confirme_user/:id', to: 'home#confirme_user', as: :confirme_user
+  
 end

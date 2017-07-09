@@ -29,7 +29,11 @@
           </a>
           <%= render 'layouts/top_menu' %>
           <div class="right item">
-            <a class="ui inverted button" id='login'>Login</a>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "ui inverted button") %>        
+            <% else %>
+              <%= link_to('Login', new_user_session_path, class: "ui inverted button", id: "login")  %>  
+            <% end %>
             <%= link_to new_user_registration_path do %>
               <div class="ui inverted button">Cadastro</div>
             <% end %>
@@ -37,10 +41,11 @@
         </div>
       </div>
   </div>
+  <%= render 'layouts/alert_messages' %>
   
   <%= yield %>
   
-  <%= render 'layouts/alert_messages' %>
+ 
 <!-- Footer Contents -->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">

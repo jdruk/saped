@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   belongs_to :course
   belongs_to :theme
   
+  def student_ufpi
+   matriculation
+  end
+  
 end

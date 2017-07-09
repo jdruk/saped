@@ -19,6 +19,8 @@ end
 gem 'devise'
 gem 'pundit'
 gem 'carrierwave', '~> 1.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development do
   gem 'web-console', '~> 2.0'

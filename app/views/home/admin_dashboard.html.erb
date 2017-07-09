@@ -1,0 +1,49 @@
+<div class="ui centered grid container">
+    <div class="ten wide column">
+        <div class="ui top attached tabular menu">
+          <a class="item active" data-tab="first">Participantes confirmados</a>
+          <a class="item" data-tab="second">Participantes não confirmados</a>
+          <a class="item" data-tab="third">Cursos</a>
+          <a class="item" data-tab="four">Artigos</a>
+        </div>
+        <div class="ui bottom attached tab segment active" data-tab="first">
+          <%= render :partial => 'home/user_table', :locals => { users: @users_confirmed,  show_links: false } %>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="second">
+          <%= render :partial => 'home/user_table', :locals => { users: @users_unconfirmed,  show_links: true } %>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="third">
+            <table class="ui fixed single line celled table">
+                <thead>
+                    <tr>
+                        <th>Cursos</th>
+                        <th>Quantidade confirmado</th>
+                        <th>Lista de parcipantes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @courses.each do |course|  %>    
+                        <tr>
+                            <td>
+                                <%= course.name %>
+                            </td>
+                            <td>
+                                <%= course.members_length %>    
+                            </td>
+                            <td>
+                                <%= link_to "Lista", course_path(course, format: :pdf), class: 'ui button teal' %>
+                            </td>
+                             
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="four">
+          Four
+        </div>
+    </div>
+</div>
+<script>
+    $('.menu .item').tab();
+</script>

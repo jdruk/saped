@@ -11,7 +11,7 @@
     </div>
   
     <div class="field">
-      <%= f.label :password %>
+      <%= f.label 'Senha' %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
@@ -19,12 +19,12 @@
     </div>
   
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label "Confirmação de senha" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
   
     <div class="field">
-      <%= f.label :name %><br />
+      <%= f.label 'Nome' %><br />
       <%= f.text_field :name %>
     </div>
     
@@ -64,13 +64,13 @@
     </script>
     
     <div id="matricula" class="field" style="display: none;">
-      <%= f.label :matriculation %><br />
+      <%= f.label "Número da mátricula" %><br />
       <%= f.text_field :matriculation %>
     </div>
     
     <!-- tem que informar os tipos com popup ou algo do tipo -->
     <div id="participacao" class="field" >
-      <%= f.label :participation %><br />
+      <%= f.label 'Tipo de participação' %><br />
       <%= f.collection_select(:participation_id, Participation.all, :id, :name, {prompt: 'Tipo de participacao'}, {:class=>'ui dropdown'}) %>
     </div> 
     <script>
@@ -87,12 +87,12 @@
     </script>
     
     <div id="tema" class="field" style="display: none;" >
-      <%= f.label :theme %><br />
+      <%= f.label 'Tema' %><br />
       <%= f.collection_select(:theme_id, Theme.all, :id, :name, {prompt: 'Tema da apresentação'}, {:class=>'ui dropdown'}) %>
     </div>
     
     <div class="field">
-      <%= f.label :course %><br />
+      <%= f.label 'Mini-curso' %><br />
       <%= f.collection_select(:course_id, Course.avalaible, :id, :name, { prompt: 'Curso'}, {:class=>'ui dropdown'}) %>
     </div>
     
