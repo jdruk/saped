@@ -1,0 +1,15 @@
+<div class="ui centered grid container">
+    <div class="ten large column">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'ui form', multipart: true}) do |f| %>
+            <p>
+                <label>Meu artigo</label>
+                <div class="field">
+                    <%= f.file_field :article, class: '' %>
+                </div>
+            </p>
+            <div class="actions">
+                <%= f.submit "Enviar", class: 'ui button teal' %>
+            </div>
+        <% end %>
+    </div>
+</div>

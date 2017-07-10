@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
    matriculation
   end
   
+  def self.articles
+    User.where.not(:article=> nil).where(pay: true)
+  end
+  
 end
