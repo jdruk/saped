@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   end
   
   def status_pay
-    if self.pay = 1
+    if pay
       'Pagamento confirmado!'
     else
       'Aguardando confirmação pagamento'
