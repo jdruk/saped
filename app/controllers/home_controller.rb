@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   before_action :set_user, only: :confirme_user
- 
+  layout 'dashboard', except: :index
+  
   def index
     if user_signed_in?
       redirect_to dashboard_path
@@ -28,9 +29,9 @@ class HomeController < ApplicationController
     @user.pay = 1
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_dashboard_path, notice: 'Particante confirmado com sucesso' }
+        format.html { redirect_to admin_dashboard_path, notice: 'Particante confirmado com sucesso', tab: 'second' }
       else
-        format.html { redirect_to admin_dashboard_path, notice: 'Ocorreu um erro!! contate o desenvolvedor!' }
+        format.html { redirect_to admin_dashboard_path, notice: 'Ocorreu um erro!! contate o desenvolvedor!', tab: 'second' }
       end
     end
   end

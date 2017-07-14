@@ -66,3 +66,9 @@
 <script>
     $('.menu .item').tab();
 </script>
+
+<% if params[:tab] %>
+    <script>
+        $.tab('change tab', params[:tab]);
+    </script>
+<% end %>

@@ -22,4 +22,12 @@ class User < ActiveRecord::Base
     User.where.not(:article=> nil).where(pay: true)
   end
   
+  def status_pay
+    if self.pay = 1
+      'Pagamento confirmado!'
+    else
+      'Aguardando confirmação pagamento'
+    end
+  end
+  
 end

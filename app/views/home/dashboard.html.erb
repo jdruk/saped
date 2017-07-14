@@ -1,8 +1,14 @@
-<div class="ui centered grid container">
-    <div class="ten large column">
+<div class="nine wide column">
+      <div id="regInnkommende" class="ui stacked segment">
+        <a class="ui yellow ribbon label">Edital para envio de artigos</a>
+        <p style="margin-top:2em;">
+            <%= render 'layouts/alert_messages' %>
+            Para download do edital <a href="edital.pdf" class="ui tiny button "> CLIQUE AQUI</a>.
+        </p>
+        <div class="ui form">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'ui form', multipart: true}) do |f| %>
             <p>
-                <label>Meu artigo</label>
+                <h5><label>Meu artigo</label></h5>
                 <div class="field">
                     <%= f.file_field :article, class: '' %>
                 </div>
@@ -11,5 +17,28 @@
                 <%= f.submit "Enviar", class: 'ui button teal' %>
             </div>
         <% end %>
+        </div>
+      </div>
+      
+      
+      <div class="ui hidden divider"></div>
+
     </div>
-</div>
+    <div class="seven wide column">
+      <div class="ui secondary segment">
+        <div class="ui grey small horizontal statistic">
+          <div class="value">
+            <%= current_user.status_pay %>
+          </div>
+        </div>
+      </div>
+      
+        <div id="regInnkommende" class="ui stacked segment">
+            <a class="ui blue ribbon label">Dados para pagamento</a>
+            <p style="margin-top:1em;">Banco: Banco CAIXA </p>
+            <p>Agência: 00000000</p>
+            <p>Conta Corrente: 00000000 Operação: 013333333xxx</p>
+      </div>
+
+      
+    </div>
