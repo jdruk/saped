@@ -1,103 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SAPED</title>
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= yield :head %>
-  <style>
-      body {
+  <head>
+    <title>SAPED</title>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= yield :head %>
+    <style>
+        body {
           height: calc(100% - 7em) !important;
           background: lighten(#FAFDF0,1);
         }
-
-
-        .dont-show {
-          display: none;
-        }
-
+        .dont-show {display: none;}
+        
         #userbutton {
-        font-size: .88em;
-
-  i {
-    font-size: 1rem;
-  }
+          font-size: .88em;
+          i {
+            font-size: 1rem;
+          }
+        }
+        
+        #maincontent {
+          margin-top: 7em;
+          margin-bottom: -7em;
+          .ribbon {
+            margin-bottom: 1.3em;
+            cursor: default;
+          }
+        }
   
-}
-
-#maincontent {
-    margin-top: 7em;
-    margin-bottom: -7em;
-  .ribbon {
-    margin-bottom: 1.3em;
-    cursor: default;
-  }
-  
-  }
-
-  </style>
-</head>
-<body>
-    
-<div class="ui fixed  menu">
-  <div class="ui container">
-    <a href="#" class="header item">
-      <i class="bar chart icon"></i>
-        Dashboard
-    </a>
-    <%= link_to('Página administrativa', admin_dashboard_path, class: 'item') if current_user.admin %>
-    
-    <div class="right menu">
-      <div class="borderless item">
-        <%= link_to  destroy_user_session_path, method: :delete do  %>   
-            <button id="userbutton" class="ui right labeled icon teal button">Sair 
-            </button>
-        <% end %>
+    </style>
+  </head>
+  <body>
+    <div class="ui fixed  menu">
+      <div class="ui container">
+        <a href="#" class="header item">
+          <i class="bar chart icon"></i>
+            Dashboard
+        </a>
+        <%= link_to('Página administrativa', admin_dashboard_path, class: 'item') if current_user.admin %>
+        
+        <div class="right menu">
+          <div class="borderless item">
+            <%= link_to  destroy_user_session_path, method: :delete do  %>   
+                <button id="userbutton" class="ui right labeled icon teal button">Sair 
+                </button>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-<div id="maincontent" class="ui main container">
-  <div class="ui stackable grid">
-    <%= yield %>
-  </div>
-</div>
-<script>
-    $('.ui.checkbox')
-  .checkbox()
-;
-$('.dropdown')
-  .dropdown()
-;
-
-$('#regInnkommende .ui.checkbox')
-.checkbox({
-    onChecked: function() {
-      $('#regInnkommende .datepicker').addClass('dont-show');
-  },
-    onUnchecked: function() {
-     $('#regInnkommende .datepicker').removeClass('dont-show');
-    }})
-;
-
-
-$('#regUtgaende .ui.checkbox')
-.checkbox({
-    onChecked: function() {
-      $('#regUtgaende .datepicker').addClass('dont-show');
-  },
-    onUnchecked: function() {
-     $('#regUtgaende .datepicker').removeClass('dont-show');
-    }})
-;
-</script>
-</body>
+    
+    <div id="maincontent" class="ui main container">
+      <div class="ui stackable grid">
+        <%= yield %>
+      </div>
+    </div>
+    
+    <script>
+      $('.ui.checkbox').checkbox();
+      $('.dropdown').dropdown();
+      $('#regInnkommende .ui.checkbox').checkbox({
+        onChecked: function() {
+          $('#regInnkommende .datepicker').addClass('dont-show');
+        },
+        onUnchecked: function() {
+         $('#regInnkommende .datepicker').removeClass('dont-show');
+        }}
+      );
+    
+      $('#regUtgaende .ui.checkbox')
+      .checkbox({
+        onChecked: function() {
+          $('#regUtgaende .datepicker').addClass('dont-show');
+      },
+        onUnchecked: function() {
+         $('#regUtgaende .datepicker').removeClass('dont-show');
+        }}
+      );
+    </script>
+  </body>
 </html>
