@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.5'
-gem 'sqlite3'
+gem 'rails', '4.2.6'
+gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -23,7 +23,12 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 group :development do
+  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'capistrano', '~> 3.7', '>= 3.7.1'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  # Add this if you're using rbenv
+  gem 'capistrano-rbenv', '~> 2.1'
 end
-

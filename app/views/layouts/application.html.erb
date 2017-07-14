@@ -32,7 +32,8 @@
             <% if user_signed_in? %>
               <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "ui inverted button") %>        
             <% else %>
-              <%= link_to('Login', new_user_session_path, class: "ui inverted button", id: "login")  %>  
+              <a class="ui inverted button" id='login' >Login</a>
+              <%# link_to('Login', new_user_session_path, class: "ui inverted button", id: "login")  %>  
             <% end %>
             <%= link_to new_user_registration_path do %>
               <div class="ui inverted button">Cadastro</div>
