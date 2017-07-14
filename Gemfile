@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'capistrano-rails', group: :development
+#gem 'capistrano-rails', group: :development
 
 group :development, :test do
   gem 'byebug'
@@ -26,7 +26,7 @@ group :development do
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'capistrano', '~> 3.7', '>= 3.7.1'
+  gem 'capistrano', '~> 3.7'
   gem 'capistrano-rails', '~> 1.2'
   gem 'capistrano-passenger', '~> 0.2.0'
   # Add this if you're using rbenv
