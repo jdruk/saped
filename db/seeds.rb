@@ -15,17 +15,20 @@ puts "Add usuarios admin"
 User.create! name: 'admin', cpf: '1234567891234', email:'admin@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
 User.create! name: 'josafa', cpf: '1234567891234', email:'josafa@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
 User.create! name: 'ada', cpf: '1234567891234', email:'ada@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
+User.create! name: 'alunos', cpf: '1234567891234', email:'geral@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
 
 # Informações básicas, não remover do banco!
 puts 'Cursos e palestrantes'
 Course.create! name: 'Nenhum', panelist: 'Nenhum'
-Course.create! name: 'Oficina de dança', panelist: 'Wallison Lima'
-Course.create! name: 'Formação de professores para educação infantil', panelist: 'Alessandra'
-Course.create! name: 'Filosofia e práxis', panelist: 'Jasmine'
-Course.create! name: 'Didática da matemática', panelist: 'Maria César'
-Course.create! name: 'A DEFINIR ALGEIR ', panelist: 'Algeir'
-Course.create! name: 'A DEFINIR PAULO CÉSAR', panelist: 'Paulo César'
-Course.create! name: 'A DEFINIR ISABEL ORQUIZ', panelist: 'Isabel Orquiz'
+Course.create! name: 'O lugar do brincar na Educação Infantil', panelist: 'Prof.ª Mestre Alessandra Lopes
+Castelini'
+Course.create! name: 'A utilização do pensamento de Michel Foucault como método de pesquisa em
+História da Educação', panelist: 'Prof. Mestre Nilton Ferreira Bittencourt Júnior'
+Course.create! name: 'Marxismo e Educação', panelist: 'Prof.ª Mestre Jasmine Castro'
+Course.create! name: 'Aprendendo e ensinando Matemática sem medo', panelist: 'Prof. ª Doutora Maria
+Cézar Sousa'
+Course.create! name: 'Scratch com Latex', panelist: '– Prof. Mestre Algeir Sampaio'
+
 
 puts "Temas para apresentação oral"
 Theme.create! name: 'Nenhum'
