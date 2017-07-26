@@ -148,6 +148,10 @@
   	height: 0;
   	z-index: 10;
   }
+  
+  #t{
+    height: 600px !important;
+  }
   </style>
  <title>SAPED</title>
 </head>
@@ -156,19 +160,21 @@
   <div class="ui large inverted top menu fixed ">
     <div class="ui container">
       <a class="active item" href="/">Home</a>
-      <a class="item">Evento</a>
+      <a class="item" href="#evento">Evento</a>
       <a class="item" href="#palestrantes">Palestrantes</a>
       <div class="right menu">
         <div id="login" class="item">
           <a class="ui button">Log in</a>
         </div>
         <div class="item" id="cadastrar">
-          <%= link_to 'Cadastrar',new_user_registration_path ,class: 'ui primary button' %>
+          <%= link_to 'Inscrever-se',new_user_registration_path ,class: 'ui primary button' %>
         </div>
       </div>
     </div>
   </div>
 
+  <%= yield :sidebar %>
+  
   <%= yield %>
 
   <div class='footer'>

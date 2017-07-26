@@ -3,25 +3,140 @@
       <div class="ui middle aligned stackable grid container">
         <div class="row">
           <div class="eight wide column">
-            <h3 >Palestras</h3>
-            <p>O SAPED promoverá palestras com temas atuais e de grande interesse da academia. Possibilitando assim aos participantes reconhecerem o trabalho apresentado pelos convidados de maneira mais clara e se atualizarem dos assuntos abordados, podendo desenvolver projetos pessoais ou esclarecer dúvidas decorrentes dos temas abordados.</p>
-            <h3 class="ui header">Minicursos</h3>
-            <p>Que com mais especifidade, levarão ao participante um conteúdo técnico, detalhado e prático acerca das ferramentas abordadas, que serão: Aprendendo e ensinando Matemática sem medo; Scratch com Latex; Marxismo e Educação; A utilização do pensamento de Michel Foucault como método de pesquisa em
-História da Educação; O lugar do brincar na Educação Infantil; Entre outras.</p>
-            <h3 class="ui header">Submissão de trabalhos</h3>
-            <p>A submissão de artigos científicos é a forma mais comum de disseminar os avanços alcançados por pesquisas científicas que são desenvolvidas em diversas áreas do conhecimento. Caso queira submeter confira o nosso <a href="edital.pdf" class="ui button tiny teal">VEJA AS NORMAS</a></p>
+            <h3 >Evento</h3>
+            <p class='ui text justify' style="text-align: justify;
+text-justify: inter-word;">A VII Semana Acadêmica de Pedagogia consiste em um evento anual realizado desde 2010,
+pela Coordenação do curso de Licenciatura Plena em Pedagogia do CSHNB/UFPI. Trata-se de
+uma iniciativa que busca promover, em três dias de intensa vivência acadêmica, o debate
+propositivo sobre temas de relevância no campo da educação, considerando temas inscritos
+na agenda global das políticas e práticas educativas em diálogo com as demandas locais que
+desafiam os organismos gestores e instituições escolares. O evento adquiriu, ao longo de suas
+edições, evidente relevância no contexto regional, passando a acolher um público cada vez
+mais variado. Em 2017, o evento, em consonância com o projeto anual que organiza as ações
+da coordenação e de professores do curso, tem como tema “As (ré)formas educacionais e a
+formação política do professor: velhos embates, novas estratégias”. Ao definir esse foco
+temático, intenciona-se desencadear debates acerca das problemáticas do curso de Pedagogia
+em relação aos discursos curriculares entretecidos pelas políticas educacionais recentes e às
+práticas de formação que encontram lugar nas atividades desenvolvidas no curso e pelos
+profissionais egressos do mesmo. Pressupõe-se, o conceito de Pedagogia, como saber-fazer
+fomentador da práxis educativa, referenciando os desafios globais e locais que tencionam a
+agenda pública da educação.</p>
+                        <h3 class="ui header">Submissão de trabalhos</h3>
+            <p style="text-align: justify;
+text-justify: inter-word;">A submissão de artigos científicos é a forma mais comum de disseminar os avanços alcançados por pesquisas científicas que são desenvolvidas em diversas áreas do conhecimento. Caso queira submeter confira o nosso <a href="edital.pdf" class="ui button tiny teal">VEJA AS NORMAS</a></p>
           </div>
-          <div class="six wide right floated column">
+          <div id="maincontent" class="six wide right floated column" style="margin-top:-20em;">
             <%= image_tag 'fundo.png', class: 'ui large bordered rounded image' %>
+          </div>
+          <div id="maincontent" class="eight wide right floated column" style="margin-top:-20em;">
+            <h3 >Palestras</h3>
+            <p style="text-align: justify;
+text-justify: inter-word;">O SAPED promoverá palestras com temas atuais e de grande interesse da academia. Possibilitando assim aos participantes reconhecerem o trabalho apresentado pelos convidados de maneira mais clara e se atualizarem dos assuntos abordados, podendo desenvolver projetos pessoais ou esclarecer dúvidas decorrentes dos temas abordados.</p>
+
           </div>
         </div>
         <div class="row">
           <div class="center aligned column">
-            <a class="ui huge button">PARTICIPE!</a>
+            <%= link_to 'PARTICIPE!',new_user_registration_path ,class: 'ui huge button' %>
           </div>
         </div>
       </div>
     </di>
+    
+    <div class="ui vertical stripe segment">
+        <div class="ui text container ">
+          <h3 id="evento" class="ui center aligned column header ">Cronograma do evento</h3>
+          <table class="ui celled  table">
+              <thead>
+                <tr>
+                  <th rowspan="2" colspan='6' class="center aligned">VII SEMAA ACADÊMICA DE PEGAGOCIA DO CSHNB/UFPI<br>
+                    As (ré)formas educacionais e a formação política do professor: velhos embates, novas estratégias
+                  </th>
+                </tr>
+                
+              </thead>
+              <tbody>
+                <tr>
+                  <th colspan='2' class="center aligned"> 20 de setembro</th>
+                  <th colspan='2' class="center aligned"> 21 de setembro</th>
+                  <th colspan='2' class="center aligned"> 22 de setembro</th>
+                </tr>
+                
+                <tr>
+                  <td >9h às 12h</td>
+                  <td>Credenciamento (Sala do núcleo de pesquisas em pesquisas e práticas pedagógicas - UFPI/CNPq)</td>
+                 
+                  <td>8h às 12h</td>
+                  <td>Início da exposição de pôsteres (ficarão expostos durante toda a manhã)</td>
+                  
+                  <td>9h às 12h</td>
+                  <td> Comunicação Orais ( Grupos temáticos)</td>
+                </tr>
+                
+                <tr>
+                  <td>14h às 17h</td>
+                  <td>Credenciamento (Sala do núcleo de pesquisas em pesquisas e práticas pedagógicas - UFPI/CNPq)</td>
+                  
+                  <td>14h às 17h</td>
+                  <td>Oficinas e minicursos</td>
+                  
+                  <td>14h às 17h</td>
+                  <td>Oficinas e minicursos</td>
+                </tr>
+                <tr>
+                  <td>18h30</td>
+                  <td>Apresentação cultural</td>
+                  
+                  <td>18h30</td>
+                  <td>Mesa redonda
+Tema: As reformas da educação
+básica: tensões, desafios e
+possibilidades em tempos de crise.
+Raquel Dias Araújo– UECE
+Carla Silvino – UFPI
+Leonardo Severo - UFPB</td>
+                  
+                  <td>18h30</td>
+                  <td>Conferência de encerramento
+Tema: Quanto vale um professor?
+Prof.ª Dr.ª Elda Maria Freire Maciel (UECE)</td>
+                </tr>
+                <tr>
+                  <td>19h</td>
+                  <td>Cerimônia de abertura
+(Composição da mesa e
+pronunciamento da comissão
+organizadora)</td>
+                  
+                  <td></td>
+                  <td></td>
+                  
+                  <td>21h</td>
+                  <td>Premiação dos melhores trabalhos</td>
+                </tr>
+                
+                <tr>
+                  <td>19h30</td>
+                  <td>Conferência de abertura
+Tema: As (ré) formas educacionais e a
+formação política do professor: velhos
+embates, novas estratégias.
+José Deribaldo Gomes dos Santos –
+UECE (Conceição)</td>
+
+                <td></td>
+                <td></td>
+                
+                <td>22h</td>
+                <td>Evento Cultural</td>
+                </tr>
+              </tbody>
+            </table>
+          <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
+          <a class="ui large button">Read More</a>
+        </div>
+      </div>
+      
     <h4 class="ui horizontal header divider">
       <a href="#" id='palestrantes'>Palestrantes</a>
     </h4>
@@ -36,7 +151,8 @@ História da Educação; O lugar do brincar na Educação Infantil; Entre outras
             </div>
             <div class="column">
 
-              <p>
+              <p style="text-align: justify;
+text-justify: inter-word;">
                 Possui graduação em Pedagogia pela
                 Universidade Estadual Vale do Acaraú
                 (UVA/2001), especialização em Gestão
@@ -75,7 +191,8 @@ História da Educação; O lugar do brincar na Educação Infantil; Entre outras
               </div>
               <div class="column">
 
-                <p>
+                <p style="text-align: justify;
+text-justify: inter-word;">
                   Possui graduação em Pedagogia pela Universidade
                   Estadual do Ceará (1994), Mestrado Em Educação
                   Brasileira pela Universidade Federal do Ceará (2000) e
@@ -106,7 +223,8 @@ História da Educação; O lugar do brincar na Educação Infantil; Entre outras
                 </div>
                 <div class="column">
 
-                  <p>
+                  <p style="text-align: justify;
+text-justify: inter-word;">
                     Doutor e Mestre em Educação pelo Programa de Pós-Graduação em Educação da Universidade
 Federal da Paraíba (UFPB), com estágios doutorais na Universidade de São Paulo (USP) e
 Universidad Nacional de Educación a Distancia (UNED), em Madrid - Espanha. Licenciado em
@@ -135,7 +253,8 @@ ainda, como editor da Revista Espaço do Currículo.
                   </div>
                   <div class="column">
 
-                    <p>
+                    <p style="text-align: justify;
+text-justify: inter-word;">
                       Doutoranda em Educação pela Universidade de São Paulo
 - USP. Possui graduação em História Licenciatura Plena
 pela Universidade Estadual do Ceará (2003),
@@ -155,68 +274,32 @@ Estágio Supervisionado.
                 </div>
               </div>
             </div>
+            
+            <div class="ui vertical stripe quote segment">
+              <div class="ui equal width stackable internally celled grid">
+                <div class="center aligned row">
+                  <div class="column">
+                    <h3>Elda Maria Freire Maciel </h3>
+                    <a href="#" class="ui medium image">
+                        <%= image_tag 'palestrante5.png', class: 'ui circular image' %>
+                    </a>
+                  </div>
+                  <div class="column">
+
+                    <p style="text-align: justify;
+text-justify: inter-word;">
+                      Possui Doutorado em Sociologia pela Universidade Federal do Ceará (2009), Mestrado
+em Educação pela Universidade Federal do Ceará (2000), graduação em Bacharelado
+em Ciências Sociais pela Universidade Estadual do Ceará (2009), graduação em
+Licenciatura em Pedagogia pela Universidade Estadual do Ceará (1987). Atualmente é
+Professora Adjunto da Universidade Estadual do Ceará atuando com temas como
+política, partido politico, movimentos sociais, educação e cultura.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
-      <div class="ui vertical stripe segment">
-        <div class="ui text container">
-          <h3 class="ui header">Cronograma</h3>
-          <table class="ui celled structured table">
-              <thead>
-                <tr>
-                  <th rowspan="1">Name</th>
-                  <th rowspan="2">Type</th>
-                  <th rowspan="2">Files</th>
-                  <th colspan="3">Languages</th>
-                </tr>
-                <tr>
-                  <th rowspan="2vamos f">Ruby</th>
-                  <th>JavaScript</th>
-                  <th>Python</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Alpha Team</td>
-                  <td>Project 1</td>
-                  <td class="right aligned">2</td>
-                  <td class="center aligned">
-                    <i class="large green checkmark icon"></i>
-                  </td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td rowspan="3">Beta Team</td>
-                  <td>Project 1</td>
-                  <td class="right aligned">52</td>
-                  <td class="center aligned">
-                    <i class="large green checkmark icon"></i>
-                  </td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Project 2</td>
-                  <td class="right aligned">12</td>
-                  <td></td>
-                  <td class="center aligned">
-                    <i class="large green checkmark icon"></i>
-                  </td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Project 3</td>
-                  <td class="right aligned">21</td>
-                  <td class="center aligned">
-                    <i class="large green checkmark icon"></i>
-                  </td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-          <a class="ui large button">Read More</a>
-        </div>
-      </div>
+      
       

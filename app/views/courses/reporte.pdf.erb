@@ -27,9 +27,9 @@
       <tbody>
         <% @course.members_confirmed.each do |student| %>
           <tr>
-            <td><%= student.name %></td>
-            <td><%= student.cpf %></td>
-            <td><%= student.matriculation %></td>
+            <td style="text-transform: uppercase;"><%= student.name %></td>
+            <td style="text-transform: uppercase;"><%= student.cpf %></td>
+            <td style="text-transform: uppercase;"><%= student.matriculation %></td>
           </tr>
         <% end %>
       </tbody>
