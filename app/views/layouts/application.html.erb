@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SAPED</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Semana de pedagogia da Universidade Federal do Piauí - campus Picos">
+  <meta name="keywords" content="Pedagogia, Palestras, Cursos, Picos, UFPI">
+  <meta name="author" content="Josafá Martins dos Santos">
+  
   <!-- Standard Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -10,72 +14,171 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
   <%= yield :head %>
-</head>
-<body>
+  
+ .conteudo1 .tituloc1 strong {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 18px;
+  }
+  
+  .hidden.menu {
+      display: none;
+    }
+	
+	.masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+	
+	.ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    } .hidden.menu {
+      display: none;
+    }
 
-<!-- Sidebar Menu -->
-  <div class="ui vertical inverted sidebar menu">
-    <%= render 'layouts/top_menu' %>
-  </div>
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+  .rodape {
+  	background-color: rgb(0, 0, 0);
+  	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	height: 105px;
+  	z-index: 10;
+  }
   
-<div class="pusher">  
-<!-- Page Contents -->
-  <div class="ui inverted vertical masthead center aligned segment">
-      <div class="ui container">
-        <div class="ui large secondary inverted pointing menu">
-          <a class="toc item">
-            <i class="sidebar icon"></i>
-          </a>
-          <%= render 'layouts/top_menu' %>
-          <div class="right item">
-            <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "ui inverted button") %>        
-            <% else %>
-              <a class="ui inverted button" id='login' >Login</a>
-              <%# link_to('Login', new_user_session_path, class: "ui inverted button", id: "login")  %>  
-            <% end %>
-            <%= link_to new_user_registration_path do %>
-              <div class="ui inverted button">Cadastro</div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-  </div>
-  <%= render 'layouts/alert_messages' %>
+  .rodapeimg {
+  	background-image: url('rodape.png');
+  	position: absolute;
+  	left: 45%;
+  	bottom: 105px;
+  	width: 239px;
+  	height: 67px;
+  	z-index: 11;
+  }
   
-  <%= yield %>
-  
- 
-<!-- Footer Contents -->
-  <div class="ui inverted vertical footer segment">
+  .linhaesq {
+  	border-width: 1px;
+  	border-color: #333;
+  	border-style: solid;
+  	background-color: rgb(0, 0, 0);
+  	position: absolute;
+  	bottom: 112px;
+  	width: 100%;
+  	height: 0;
+  	z-index: 10;
+  }
+  </style>
+ <title>SAPED</title>
+</head>
+
+<body>
+  <div class="ui large inverted top menu fixed ">
     <div class="ui container">
-      <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="three wide column">
-          <h4 class="ui inverted header">About</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Sitemap</a>
-            <a href="#" class="item">Contact Us</a>
-            <a href="#" class="item">Religious Ceremonies</a>
-            <a href="#" class="item">Gazebo Plans</a>
-          </div>
+      <a class="active item" href="/">Home</a>
+      <a class="item">Evento</a>
+      <a class="item" href="#palestrantes">Palestrantes</a>
+      <div class="right menu">
+        <div id="login" class="item">
+          <a class="ui button">Log in</a>
         </div>
-        <div class="three wide column">
-          <h4 class="ui inverted header">Services</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Banana Pre-Order</a>
-            <a href="#" class="item">DNA FAQ</a>
-            <a href="#" class="item">How To Access</a>
-            <a href="#" class="item">Favorite X-Men</a>
-          </div>
-        </div>
-        <div class="seven wide column">
-          <h4 class="ui inverted header">Footer Header</h4>
-          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        <div class="item" id="cadastrar">
+          <%= link_to 'Cadastrar',new_user_registration_path ,class: 'ui primary button' %>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <%= yield %>
+
+  <div class='footer'>
+    <div class="rodapeimg"> </div>
+    <div class="rodape"> </div>
+    <div class="linhaesq"> </div>   
+  </div>
+  
+  <!-- Modal user -->
+  <%= render 'layouts/user' %> 
+
 </body>
 </html>

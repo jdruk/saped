@@ -1,6 +1,7 @@
-<div class="ui centered grid container segment">
-    <div class="five wide column">
-      <h2>Cadastro</h2>
+<div class="ui modal cadastrar">
+<div class="ui centered grid container">
+      <div class="five wide column">
+<h2>Cadastro</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui form'}) do |f| %>
     <%= devise_error_messages! %>
@@ -87,7 +88,7 @@
     </script>
     
     <div id="tema" class="field" style="display: none;" >
-      <%= f.label 'Grupo Temático' %><br />
+      <%= f.label 'Tema' %><br />
       <%= f.collection_select(:theme_id, Theme.all, :id, :name, {prompt: 'Tema da apresentação'}, {:class=>'ui dropdown'}) %>
     </div>
     
@@ -104,15 +105,16 @@
   <%= render "users/shared/links" %>
   </div>
 </div>
-
+</div>
 <script>
   $('select.dropdown').dropdown();
 </script>
 
 <%= render 'layouts/user' %>
-
-<% content_for :head do %>      
-  .footer{
-    display: none;
-  }
-<% end %>
+<script>
+    $(document).ready(function(){
+    $("#cadastrar").click(function(){
+        $('.ui.modal.cadastrar').modal('show');
+    });
+});
+</script>

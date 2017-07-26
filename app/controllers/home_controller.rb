@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   before_action :set_user, only: :confirme_user
   layout 'dashboard', except: :index
   
+  
   def index
     if user_signed_in?
       redirect_to dashboard_path

@@ -1,140 +1,222 @@
-<% content_for :head do %>
-  <style type="text/css">
-
-    .hidden.menu {
-      display: none;
-    }
-
-    .masthead.segment {
-      min-height: 700px;
-      padding: 1em 0em;
-    }
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
-    .masthead h1.ui.header {
-      margin-top: 3em;
-      margin-bottom: 0em;
-      font-size: 4em;
-      font-weight: normal;
-    }
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
-
-    .ui.vertical.stripe {
-      padding: 8em 0em;
-    }
-    .ui.vertical.stripe h3 {
-      font-size: 2em;
-    }
-    .ui.vertical.stripe .button + h3,
-    .ui.vertical.stripe p + h3 {
-      margin-top: 3em;
-    }
-    .ui.vertical.stripe .floated.image {
-      clear: both;
-    }
-    .ui.vertical.stripe p {
-      font-size: 1.33em;
-    }
-    .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
-    }
-
-    .quote.stripe.segment {
-      padding: 0em;
-    }
-    .quote.stripe.segment .grid .column {
-      padding-top: 5em;
-      padding-bottom: 5em;
-    }
-
-    .footer.segment {
-      padding: 5em 0em;
-    }
-
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
-
-    @media only screen and (max-width: 700px) {
-      .ui.fixed.menu {
-        display: none !important;
-      }
-      .secondary.pointing.menu .item,
-      .secondary.pointing.menu .menu {
-        display: none;
-      }
-      .secondary.pointing.menu .toc.item {
-        display: block;
-      }
-      .masthead.segment {
-        min-height: 350px;
-      }
-      .masthead h1.ui.header {
-        font-size: 2em;
-        margin-top: 1.5em;
-      }
-      .masthead h2 {
-        margin-top: 0.5em;
-        font-size: 1.5em;
-      }
-    }
-    
-  </style>
-  
-  <script>
-  $(document)
-    .ready(function() {
-
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-  </script>
-<% end %>
-
-<div class="ui vertical stripe segment">
-    <div class="ui middle aligned stackable grid container">
-      <div class="row">
-        <div class="eight wide column">
-          <h3 class="ui header">We Help Companies and Companions</h3>
-          <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-          <h3 class="ui header">We Make Bananas That Can Dance</h3>
-          <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+  <div class="pusher">
+    <div class="ui vertical stripe segment" >
+      <div class="ui middle aligned stackable grid container">
+        <div class="row">
+          <div class="eight wide column">
+            <h3 >Palestras</h3>
+            <p>O SAPED promoverá palestras com temas atuais e de grande interesse da academia. Possibilitando assim aos participantes reconhecerem o trabalho apresentado pelos convidados de maneira mais clara e se atualizarem dos assuntos abordados, podendo desenvolver projetos pessoais ou esclarecer dúvidas decorrentes dos temas abordados.</p>
+            <h3 class="ui header">Minicursos</h3>
+            <p>Que com mais especifidade, levarão ao participante um conteúdo técnico, detalhado e prático acerca das ferramentas abordadas, que serão: Aprendendo e ensinando Matemática sem medo; Scratch com Latex; Marxismo e Educação; A utilização do pensamento de Michel Foucault como método de pesquisa em
+História da Educação; O lugar do brincar na Educação Infantil; Entre outras.</p>
+            <h3 class="ui header">Submissão de trabalhos</h3>
+            <p>A submissão de artigos científicos é a forma mais comum de disseminar os avanços alcançados por pesquisas científicas que são desenvolvidas em diversas áreas do conhecimento. Caso queira submeter confira o nosso <a href="edital.pdf" class="ui button tiny teal">VEJA AS NORMAS</a></p>
+          </div>
+          <div class="six wide right floated column">
+            <%= image_tag 'fundo.png', class: 'ui large bordered rounded image' %>
+          </div>
         </div>
-        <div class="six wide right floated column">
-          <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+        <div class="row">
+          <div class="center aligned column">
+            <a class="ui huge button">PARTICIPE!</a>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="center aligned column">
-          <a class="ui huge button">Check Them Out</a>
+    </di>
+    <h4 class="ui horizontal header divider">
+      <a href="#" id='palestrantes'>Palestrantes</a>
+    </h4>
+    <div class="ui vertical stripe quote segment">
+        <div class="ui equal width stackable internally celled grid">
+          <div class="center aligned row">
+            <div class="column">
+              <h3>José Deribaldo Gomes dos Santos</h3>
+              <a href="#" class="ui medium image">
+                  <%= image_tag 'palestrante1.png', class: 'ui circular image' %>
+              </a>
+            </div>
+            <div class="column">
+
+              <p>
+                Possui graduação em Pedagogia pela
+                Universidade Estadual Vale do Acaraú
+                (UVA/2001), especialização em Gestão
+                Escolar pela Universidade Estadual do
+                Ceará (UECE/2003), mestrado em
+                Políticas Públicas e Sociedade
+                (UECE/2005), em 2006 fez estágio
+                doutoral na Universidade do Porto (UP), e
+                em 2009 concluiu o doutorado em Educação Brasileira pela
+                Universidade Federal do Ceará (UFC). Concluiu, em 2015, estágio
+                pós-doutoral em Estética na Universidad Complutense de Madrid
+                (UCM) com bolsa da CAPES. É Professor Adjunto da Faculdade de
+                Educação, Ciências e Letras do Sertão Central (FECLESC-UECE),
+                atuando no Programa de Pós-Graduação em Educação
+                (PPGE/UECE) e no Mestrado Acadêmico Intercampi em Educação e
+                Ensino (MAIE/UECE). É pesquisador do Instituto de Estudos e
+                Pesquisas do Movimento Operário (IMO-UECE) e do Laboratório de
+                Pesquisas sobre Políticas Sociais do Sertão Central (Lapps-UECE).
+                Desenvolve pesquisas nas áreas de Trabalho e Educação e Estética
+                Marxista. Atua, principalmente, no exame da Educação Profissional e
+                na Formação de Professores. Lidera o Grupo de Pesquisa Trabalho,
+                Educação, Estética e Sociedade (GPTREES).
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="ui vertical stripe quote segment">
+          <div class="ui equal width stackable internally celled grid">
+            <div class="center aligned row">
+              <div class="column">
+                <h3>Raquel Dias Araujo</h3>
+                <a href="#" class="ui medium image">
+                    <%= image_tag 'palestrante2.png', class: 'ui circular image' %>
+                </a>
+              </div>
+              <div class="column">
 
-<!-- Modal user -->
-<%= render 'layouts/user' %> 
+                <p>
+                  Possui graduação em Pedagogia pela Universidade
+                  Estadual do Ceará (1994), Mestrado Em Educação
+                  Brasileira pela Universidade Federal do Ceará (2000) e
+                  Doutorado em Educação pela Universidade Federal do
+                  Ceará (2006). Atualmente, é professora adjunta do Centro de Educação da
+                  Universidade Estadual do Ceará, ministrando a disciplina Política e
+                  Planejamento Educacional. Coordenadora do Grupo de Estudo Marxismo e
+                  Educação. Integrante do Grupo de Pesquisa Ontologia do Ser Social, História,
+                  Educação e Emancipação Humana. Membro do corpo editorial da Revista
+                  Dialectus. Tem experiência de investigação na área de Trabalho, Educação e
+                  Organização de Classe, atuando principalmente nos seguintes temas: trabalho e
+                  educação; movimento sindical docente; universidade pública; política
+                  educacional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui vertical stripe quote segment">
+            <div class="ui equal width stackable internally celled grid">
+              <div class="center aligned row">
+                <div class="column">
+                  <h3>Leonardo Severo</h3>
+                  <a href="#" class="ui medium image">
+                      <%= image_tag 'palestrante3.png', class: 'ui circular image' %>
+                  </a>
+                </div>
+                <div class="column">
+
+                  <p>
+                    Doutor e Mestre em Educação pelo Programa de Pós-Graduação em Educação da Universidade
+Federal da Paraíba (UFPB), com estágios doutorais na Universidade de São Paulo (USP) e
+Universidad Nacional de Educación a Distancia (UNED), em Madrid - Espanha. Licenciado em
+Pedagogia pela Universidade Federal de Campina Grande. Tem experiência na área de
+Educação, com ênfase no estudo da Epistemologia da Pedagogia e Conhecimento Pedagógico,
+Educação Não Escolar, Desenvolvimento Curricular e Política Educacional. É pesquisador do
+Grupo de Estudos e Pesquisas em Políticas Curriculares (GEPPC - UFPB) e do Núcleo de
+Estudos, Pesquisa e Extensão em Pedagogia, Pedagogia Social e Educação Social (NUPEPES -
+UEPG). É Professor Adjunto A em regime de dedicação exclusiva no Departamento de
+Habilitações Pedagógicas do Centro de Educação na Universidade Federal da Paraíba, atuando,
+ainda, como editor da Revista Espaço do Currículo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui vertical stripe quote segment">
+              <div class="ui equal width stackable internally celled grid">
+                <div class="center aligned row">
+                  <div class="column">
+                    <h3>Carla Silvino de Oliveira </h3>
+                    <a href="#" class="ui medium image">
+                        <%= image_tag 'palestrante4.png', class: 'ui circular image' %>
+                    </a>
+                  </div>
+                  <div class="column">
+
+                    <p>
+                      Doutoranda em Educação pela Universidade de São Paulo
+- USP. Possui graduação em História Licenciatura Plena
+pela Universidade Estadual do Ceará (2003),
+Especialização em Docência na Educação a Distância pela
+Universidade de Fortaleza (2011) e mestrado em História
+Social pela Universidade Federal do Ceará (2007).
+Atualmente é professora assistente do curso de História
+da Universidade Federal do Piauí - CSHNB e
+Coordenadora da área de História do PIBID UFPI/CSHNB .
+Tem experiência na área de Ensino de História e
+Educação a distância, com ênfase em Didática, Currículo e
+Teoria do Ensino de História, Tecnologias Digitais da
+Informação e Comunicação e Prática da docência em
+Estágio Supervisionado.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+      <div class="ui vertical stripe segment">
+        <div class="ui text container">
+          <h3 class="ui header">Cronograma</h3>
+          <table class="ui celled structured table">
+              <thead>
+                <tr>
+                  <th rowspan="1">Name</th>
+                  <th rowspan="2">Type</th>
+                  <th rowspan="2">Files</th>
+                  <th colspan="3">Languages</th>
+                </tr>
+                <tr>
+                  <th rowspan="2vamos f">Ruby</th>
+                  <th>JavaScript</th>
+                  <th>Python</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alpha Team</td>
+                  <td>Project 1</td>
+                  <td class="right aligned">2</td>
+                  <td class="center aligned">
+                    <i class="large green checkmark icon"></i>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="3">Beta Team</td>
+                  <td>Project 1</td>
+                  <td class="right aligned">52</td>
+                  <td class="center aligned">
+                    <i class="large green checkmark icon"></i>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Project 2</td>
+                  <td class="right aligned">12</td>
+                  <td></td>
+                  <td class="center aligned">
+                    <i class="large green checkmark icon"></i>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Project 3</td>
+                  <td class="right aligned">21</td>
+                  <td class="center aligned">
+                    <i class="large green checkmark icon"></i>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
+          <a class="ui large button">Read More</a>
+        </div>
+      </div>
+      
