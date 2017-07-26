@@ -44,9 +44,9 @@ text-justify: inter-word;">O SAPED promoverá palestras com temas atuais e de gr
     </di>
     
     <div class="ui vertical stripe segment">
-        <div class="ui text container ">
+        <div class="ui  container " >
           <h3 id="evento" class="ui center aligned column header ">Cronograma do evento</h3>
-          <table class="ui celled  table">
+          <table class="ui celled table" >
               <thead>
                 <tr>
                   <th rowspan="2" colspan='6' class="center aligned">VII SEMAA ACADÊMICA DE PEGAGOCIA DO CSHNB/UFPI<br>
@@ -132,8 +132,6 @@ UECE (Conceição)</td>
                 </tr>
               </tbody>
             </table>
-          <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-          <a class="ui large button">Read More</a>
         </div>
       </div>
       
@@ -301,5 +299,16 @@ política, partido politico, movimentos sociais, educação e cultura.
             </div>
 
 
+<script>
+  $('a[href^="#"]').on('click', function(e) {
+	  e.preventDefault();
+	  var id = $(this).attr('href'),
+			targetOffset = $(id).offset().top;
+			
+	$('html, body').animate({ 
+		scrollTop: targetOffset - 100
+	}, 500);
+});
+</script>
       
       
