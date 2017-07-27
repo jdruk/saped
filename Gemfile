@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
 end
+gem 'capistrano-rails-console', require: false
 
 # add manualmente
 gem 'devise'
