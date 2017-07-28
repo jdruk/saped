@@ -1,15 +1,11 @@
 <div class="ui centered grid container">
     <div class="ten wide column">
         <div class="ui top attached tabular menu">
-          <a class="item active" data-tab="first">Participantes confirmados</a>
-          <a class="item" data-tab="second">Participantes não confirmados</a>
+          <a class="item" data-tab="one">Participantes não confirmados</a>
           <a class="item" data-tab="third">Cursos</a>
           <a class="item" data-tab="four">Artigos</a>
         </div>
-        <div class="ui bottom attached tab segment active" data-tab="first">
-          <%= render :partial => 'home/user_table', :locals => { users: @users_confirmed,  show_links: false } %>
-        </div>
-        <div class="ui bottom attached tab segment" data-tab="second">
+        <div class="ui bottom attached tab segment" data-tab="one">
           <%= render :partial => 'home/user_table', :locals => { users: @users_unconfirmed,  show_links: true } %>
         </div>
         <div class="ui bottom attached tab segment" data-tab="third">
@@ -45,6 +41,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Arquivo</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +51,10 @@
                                 <%= user.name %>
                             </td>
                             <td>
-                                <%= link_to 'Download', user.article_url, class: 'ui button teal' %>  
+                                <%= link_to 'Download', user.article_url, class: 'ui button ' %>  
+                            </td>
+                            <td>
+                                <%= link_to('Aprove', aprove_article_path(user), class: 'ui button teal') unless user.article_aproved %>  
                             </td>
                         </tr>
                     <% end %>
@@ -65,6 +65,7 @@
 </div>
 <script>
     $('.menu .item').tab();
+    $.tab('change tab', 'one');
 </script>
 
 <% if params[:tab] %>

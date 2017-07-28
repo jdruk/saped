@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'home#dashboard', as: :dashboard
   get 'admin_dashboard', to: 'home#admin_dashboard', as: :admin_dashboard
   get 'confirme_user/:id', to: 'home#confirme_user', as: :confirme_user
+  get 'aprove_article/:id', to: 'home#aprove_article', as: :aprove_article
   
 end

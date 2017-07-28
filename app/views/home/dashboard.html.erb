@@ -3,50 +3,24 @@
       <a class="ui yellow ribbon label">Edital para envio de artigos</a>
       <p style="margin-top:2em;">
           <%= render 'layouts/alert_messages' %>
+          <% if current_user.article_aproved %>
+            <p></p>
+            <div class="ui warning container">
+              <div class="ui message">
+                <i class="close icon"></i>
+                <div class="header">
+                  Alerta!
+                </div>
+                <p>Parabéns! Seu trabalho foi aprovado!</p>
+              </div>
+            </div>
+            <p></p>
+          <% end %>
           Para download das normas de submissão de trabalhos <a href="edital.pdf" class="ui tiny button "> CLIQUE AQUI</a>.
       </p>
-      <div class="ui form">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'ui form', multipart: true}) do |f| %>
-          <p>
-            <h5><label>Meu artigo</label> INFORME O NOME E CPF DO(S) AUTOR(ES) DO TRABALHO.</h5>
-            <div class="field">
-              <label>Autor¹ <small>primeiro</small></label>
-              <%= f.text_field :author_one,placeholder: 'Nome obrigatório!.', required: true %>
-            </div>
-            <div class="field">
-              <label>CPF¹ <small>primeiro</small></label>
-              <%= f.text_field :author_one_cpf, class: '', placeholder: 'Obrigatório, apenas números!.', required: true %>
-            </div>
-            <div class="field">
-              <label>Autor² <small>segundo</small></label>
-              <%= f.text_field :author_two, class: '', placeholder: 'Caso não haja, deixe em branco.' %>
-            </div>
-            <div class="field">
-              <label>CPF² <small>segundo</small></label>
-              <%= f.text_field :author_two_cpf, class: '', placeholder: 'Campo obrigatório caso o autor tenha tenha sido informado. Apenas número!' %>
-            </div>
-            <div class="field">
-              <label>Autor³ <small>terceiro</small></label>
-              <%= f.text_field :author_three, class: '', placeholder: 'Caso não haja, deixe em branco.' %>
-            </div>
-            <div class="field">
-              <label>CPF³ <small>terceiro</small></label>
-              <%= f.text_field :author_three_cpf, class: '', placeholder: 'Campo obrigatório caso o autor tenha tenha sido informado. Apenas número!' %>
-            </div>
-            <div class="field">
-              <label>Título do trabalho</label>
-              <%= f.text_field :article_title, placeholder: 'Título do trabalho' %>
-            </div>
-            <div class="field">
-              <label>Arquivo</label>
-              <%= f.file_field :article, class: '' %>
-            </div>
-          </p>
-          <div class="actions">
-            <%= f.submit "Enviar", class: 'ui button teal' %>
-          </div>
-        <% end %>
-      </div>
+      <% unless current_user.article_url %>
+        <%= render 'article' %>
+      <% end %>
     </div>
   <div class="ui hidden divider"></div>
 </div>

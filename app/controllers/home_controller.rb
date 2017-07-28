@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :set_user, only: :confirme_user
+  before_action :set_user, only: [:confirme_user, :aprove_article]
   layout 'dashboard', except: :index
   
   
@@ -34,6 +34,15 @@ class HomeController < ApplicationController
       else
         format.html { redirect_to admin_dashboard_path, notice: 'Ocorreu um erro!! contate o desenvolvedor!', tab: 'second' }
       end
+    end
+  end
+  
+  def aprove_article
+    @user.article_aproved= true;
+    if @user.save
+      redirect_to admin_dashboard_path, notice: 'Artigo aprovado', tab: 'four' 
+    else
+      redirect_to admin_dashboard_path, notice: 'Ocorreu um problema', tab: 'four' 
     end
   end
   
