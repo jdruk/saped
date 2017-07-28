@@ -2,7 +2,7 @@
     <div id="regInnkommende" class="ui stacked segment">
       <a class="ui yellow ribbon label">Edital para envio de artigos</a>
       <p style="margin-top:2em;">
-          <%= render 'layouts/alert_messages' %>
+          
           <% if current_user.article_aproved %>
             <p></p>
             <div class="ui warning container">
@@ -16,6 +16,20 @@
             </div>
             <p></p>
           <% end %>
+          <% if current_user.article_url and not current_user.article_aproved %>
+            <p></p>
+            <div class="ui warning container">
+              <div class="ui message">
+                <i class="close icon"></i>
+                <div class="header">
+                  Informação!
+                </div>
+                <p>Trabalho enviado aguarde o resultado!</p>
+              </div>
+            </div>
+            <p></p>
+          <% end %>
+          <%= render 'layouts/alert_messages' %>
           Para download das normas de submissão de trabalhos <a href="edital.pdf" class="ui tiny button "> CLIQUE AQUI</a>.
       </p>
       <% unless current_user.article_url %>
