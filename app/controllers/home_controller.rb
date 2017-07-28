@@ -37,6 +37,10 @@ class HomeController < ApplicationController
     end
   end
   
+  def user_poster
+  
+  end
+  
   def aprove_article
     @user.article_aproved= true;
     if @user.save
