@@ -23,7 +23,7 @@
                     <% @courses.each do |course|  %>    
                         <tr>
                             <td>
-                                <%= course.name %>
+                                <%= course.name.upcase %>
                             </td>
                             <td>
                                 <%= course.members_length %>    
@@ -50,7 +50,7 @@
                     <% User.articles.each do |user|  %>    
                         <tr>
                             <td>
-                                <%= user.name %>
+                                <%= user.name.upcase %>
                             </td>
                             <td>
                                 <%= link_to 'Download', user.article_url, class: 'ui button ' %>  
