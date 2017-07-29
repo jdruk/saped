@@ -1,5 +1,5 @@
 <div class="ui centered grid container">
-    <div class="ten wide column">
+    <div class="fourteen wide column">
         <div class="ui top attached tabular menu">
           <a class="item" data-tab="one">Participantes não confirmados</a>
           <a class="item" data-tab="third">Relátorios</a>
@@ -16,7 +16,7 @@
                     <tr>
                         <th>Cursos</th>
                         <th>Quantidade confirmado</th>
-                        <th>Lista de parcipantes</th>
+                        <th >Lista de parcipantes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,8 +28,8 @@
                             <td>
                                 <%= course.members_length %>    
                             </td>
-                            <td>
-                                <%= link_to "Lista", course_path(course, format: :pdf), class: 'ui button teal' %>
+                            <td class="ui center aligned header">
+                                <%= link_to "Lista", course_path(course, format: :pdf), class: 'ui large button teal' %>
                             </td>
                              
                         </tr>
