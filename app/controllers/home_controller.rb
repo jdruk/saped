@@ -20,9 +20,9 @@ class HomeController < ApplicationController
       redirect_to dashboard_path 
     end
     
-    @users_confirmed = User.where pay: true
+    
     # BUG DO RAILS!! Quando o default de uma variavel boolean é false ela é setanda como zero
-    @users_unconfirmed = User.where(pay: 0)
+    @users_unconfirmed = User.where(pay: 0) - User.where(:email=> 'geral@email.com')
     @courses = Course.all
   end
   
