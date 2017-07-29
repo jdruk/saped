@@ -39,6 +39,10 @@ class HomeController < ApplicationController
   
   def user_poster
   
+  end 
+  
+  def geral
+    
   end
   
   def aprove_article

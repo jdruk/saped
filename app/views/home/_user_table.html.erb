@@ -11,7 +11,7 @@
     <tbody>
         <% users.each do |user| %>
             <tr>
-                <td><%= user.name %></td>
+                <td><%= user.name.upcase %></td>
                 <td><%=  user.matriculation %></td>
                 <% if show_links %>
                     <td><%= link_to "Confirmar", confirme_user_path(user), class: 'ui button teal' %></td>

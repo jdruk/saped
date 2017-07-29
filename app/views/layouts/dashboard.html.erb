@@ -47,6 +47,7 @@
         
         <div class="right menu">
           <div class="borderless item">
+            <div class='item '>Olá <%= current_user.name.upcase %></div>
             <%= link_to  destroy_user_session_path, method: :delete do  %>   
                 <button id="userbutton" class="ui right labeled icon teal button">Sair 
                 </button>

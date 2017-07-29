@@ -2,14 +2,15 @@
     <div class="ten wide column">
         <div class="ui top attached tabular menu">
           <a class="item" data-tab="one">Participantes não confirmados</a>
-          <a class="item" data-tab="third">Cursos</a>
+          <a class="item" data-tab="third">Relátorios</a>
           <a class="item" data-tab="four">Artigos</a>
         </div>
         <div class="ui bottom attached tab segment" data-tab="one">
           <%= render :partial => 'home/user_table', :locals => { users: @users_unconfirmed,  show_links: true } %>
         </div>
         <div class="ui bottom attached tab segment" data-tab="third">
-            <p><%= link_to 'TRABALHOS', user_poster_path, class: 'ui button positive' %></p>
+            <p><%= link_to 'Trabalhos', user_poster_path, class: 'ui button positive' %>
+            <%= link_to 'Usuários confirmados', users_confirmeds_path, class: 'ui button positive' %></p>
             <table class="ui fixed single line celled table">
                 <thead>
                     <tr>

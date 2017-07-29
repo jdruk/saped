@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
   def self.poster
     User.articles.where(participation_id: 2)
   end
+  
+  def self.confirmeds
+    User.where(pay: true)
+  end
 end
