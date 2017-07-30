@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728022407) do
+ActiveRecord::Schema.define(version: 20170729223943) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 20170728022407) do
     t.string   "author_one_cpf"
     t.string   "author_two_cpf"
     t.string   "author_three_cpf"
+    t.boolean  "teacher",                default: false
+    t.string   "institution"
+    t.string   "obs_article"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

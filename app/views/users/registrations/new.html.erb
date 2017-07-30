@@ -13,7 +13,7 @@
     <div class="field">
       <%= f.label 'Senha' %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> mínimo de caracteres)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "off" %>
     </div>
@@ -67,9 +67,31 @@
       <%= f.text_field :matriculation %>
     </div>
     
+    <div  class="field" >
+      <div class="inline fields">
+      <%= f.label "Docente em alguma instituição?" %>
+      <%= f.check_box :teacher %> <small>Marque para SIM</small>
+      </div>
+    </div>
+    
+    <div id='inst' class="field" style="display:none;" >
+      <%= f.label "Instituição onde trabalha" %><br />
+      <%= f.text_field :institution %>
+    </div>
+    
+    <script>
+       $( "#user_teacher" ).on( "click", function() {
+          if ($('#user_teacher').is(':checked')){
+            $("#inst").css("display", "initial");
+          }else{
+            $("#inst").css("display", "none");
+          }
+      });
+    </script>
+    
     <!-- tem que informar os tipos com popup ou algo do tipo -->
     <div id="participacao" class="field" >
-      <%= f.label 'Tipo de participação' %><br />
+      <%= f.label 'Tipo de participação'  %><small>Deixe simples caso não vá apresentar trabalho no evento</small><br />
       <%= f.collection_select(:participation_id, Participation.all, :id, :name, {prompt: 'Tipo de participacao'}, {:class=>'ui dropdown'}) %>
     </div> 
     <script>

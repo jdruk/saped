@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   
   protected
   def configure_permitted_parameters
-    update_attrs = [:author_one_cpf, :author_two_cpf, :author_three_cpf,
+    update_attrs = [:teacher, :obs_article,:institution,
+    :author_one_cpf, :author_two_cpf, :author_three_cpf,
     :article_aproved, :article_title,:author_one,:author_two,:author_three,
     :name, :cpf, :matriculation, :participation_id, :theme_id, :course_id, :article]
     

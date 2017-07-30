@@ -37,12 +37,19 @@ class HomeController < ApplicationController
     end
   end
   
-  def user_poster
+  def negative_article
+    @user.obs = params[:obs]
+    if @user.save
+      redirect_to admin_dashboard_path, notice: 'Artigo reprovado', tab: 'four' 
+    else
+      redirect_to admin_dashboard_path, notice: 'Ocorreu um erro', tab: 'four' 
+    end
+  end
   
+  def user_poster
   end 
   
   def geral
-    
   end
   
   def aprove_article

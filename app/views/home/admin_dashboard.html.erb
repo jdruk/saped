@@ -43,7 +43,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Arquivo</th>
-                        <th>Ação</th>
+                        <th colspan='1'> Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +57,7 @@
                             </td>
                             <td>
                                 <%= link_to('Aprove', aprove_article_path(user), class: 'ui button teal') unless user.article_aproved %>  
+                                <div class='ui button red'>Reprove</div>
                             </td>
                         </tr>
                     <% end %>
@@ -65,6 +66,39 @@
         </div>
     </div>
 </div>
+
+<div class="ui modal">
+  <div class="header">Observação de trabalho reprovado</div>
+  <div class="content">
+    <div class="ui centered grid container">
+      <div class="five wide column">
+         <form id='form_negative' action='/negative_article' method="post" class='ui form'>
+            
+            <input id='id' name='id' type='hidden'></input>
+            
+            <div class="field">
+                <textarea id="obs"></textarea>
+            </div>
+
+            <div class="actions">
+              <input type='submit' value='enviar' class='ui button red' >
+            </div>
+         </form>
+          
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+  </div>
+</div>
+<script>
+    $(document).ready(function(){
+    $("#negative").click(function(){
+        $('.ui.modal').modal('show');
+    });
+});
+</script>
+
 <script>
     $('.menu .item').tab();
     $.tab('change tab', 'one');

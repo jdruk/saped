@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get 'aprove_article/:id', to: 'home#aprove_article', as: :aprove_article
   get 'poster/', to: 'home#user_poster', as: :user_poster
   get 'geral/list/users/paid', to: 'home#geral', as: :users_confirmeds
+  post 'negative_article/', to: 'home#negative_article', as: :negative_article
   
 end
