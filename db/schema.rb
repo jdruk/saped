@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170729223943) do
     t.string   "matriculation"
     t.boolean  "admin",                  default: false
     t.boolean  "pay",                    default: false
-    t.integer  "theme_id",               default: 1
+    t.integer  "theme_id"
     t.integer  "course_id",              default: 1
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false

@@ -12,10 +12,7 @@ Participation.create! name: 'Apresentar pôster'
 Participation.create! name: 'Apresentar trabalho oral'
 
 puts "Add usuarios admin"
-User.create! name: 'admin', cpf: '1234567891234', email:'admin@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
-User.create! name: 'josafa', cpf: '1234567891234', email:'josafa@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
-User.create! name: 'ada', cpf: '1234567891234', email:'ada@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
-User.create! name: 'alunos', cpf: '1234567891234', email:'geral@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
+User.create! name: 'administrador', cpf: '1234567891234', email:'geral@email.com', password: 'saped101J', password_confirmation: 'saped101J', admin: true, matriculation: ""
 
 # Informações básicas, não remover do banco!
 puts 'Cursos e palestrantes'
@@ -27,11 +24,12 @@ História da Educação', panelist: 'Prof. Mestre Nilton Ferreira Bittencourt J�
 Course.create! name: 'Marxismo e Educação', panelist: 'Prof.ª Mestre Jasmine Castro'
 Course.create! name: 'Aprendendo e ensinando Matemática sem medo', panelist: 'Prof. ª Doutora Maria
 Cézar Sousa'
-Course.create! name: 'Scratch com Latex', panelist: '– Prof. Mestre Algeir Sampaio'
+Course.create! name: 'Scratch com Latex', panelist: ' Prof. Mestre Algeir Sampaio'
+Course.create! name: 'Arte e Preservação Ambiental – Beleza Permanente', panelist: ' Rociania Barreto'
 
 
 puts "Temas para apresentação oral"
-Theme.create! name: 'Nenhum'
+
 Theme.create! name: 'Didática e formação docente'
 Theme.create! name: 'História e historiografia da educação'
 Theme.create! name: 'Linguagens e tecnologias'
