@@ -6,6 +6,16 @@
     <%= devise_error_messages! %>
   
     <div class="field">
+      <%= f.label 'Nome' %><br />
+      <%= f.text_field :name %>
+    </div>
+    
+    <div class="field">
+      <%= f.label 'CPF - apenas números!' %><br />
+      <%= f.text_field :cpf %>
+    </div>
+    
+    <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true %>
     </div>
@@ -23,15 +33,7 @@
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
   
-    <div class="field">
-      <%= f.label 'Nome' %><br />
-      <%= f.text_field :name %>
-    </div>
     
-    <div class="field">
-      <%= f.label 'CPF - apenas números!' %><br />
-      <%= f.text_field :cpf %>
-    </div>
     <div class="field">
       <div class="inline fields">
       <label for="discente">Discente da UFPI?</label>
