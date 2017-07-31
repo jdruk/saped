@@ -3,8 +3,8 @@ class Course < ActiveRecord::Base
     has_many :users
     
     def self.avalaible
-        courses = User.group(:course).count
-        courses = courses.map{|key,_| key if courses[key] <=35}.compact
+        courses = Course.all
+        courses = courses.to_a.select {|course| course.users.where(pay: true).count < 35}
         courses << Course.first
     end
     
