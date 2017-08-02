@@ -9,8 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'capistrano-rails', group: :development
-gem "sequel_pg", "~> 1.6.19", require:"sequel"
+#gem 'capistrano-rails', group: :development
+#gem "sequel_pg", "~> 1.6.19", require:"sequel"
 
 group :development, :test do
   gem 'byebug'
