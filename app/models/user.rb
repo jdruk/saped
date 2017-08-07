@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
   
   def self.articles
-    User.where.not(:article=> nil).where(pay: true)
+    User.order(:name).where.not(:article=> nil).where(pay: true)
   end
   
   def status_pay

@@ -22,7 +22,7 @@ class HomeController < ApplicationController
     
     
     # BUG DO RAILS!! Quando o default de uma variavel boolean é false ela é setanda como zero
-    @users_unconfirmed = User.where(pay: 0) - User.where(:email=> 'geral@email.com')
+    @users_unconfirmed = User.order(:name).where(pay: 0) - User.where(:email=> 'geral@email.com')
     @courses = Course.all
   end
   

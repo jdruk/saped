@@ -13,7 +13,7 @@ class Course < ActiveRecord::Base
     end
     
     def members_confirmed
-        User.where(course: self, pay: true)
+        User.order(:name).where(course: self, pay: true)
     end
     
 end
