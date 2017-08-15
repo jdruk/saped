@@ -9,6 +9,11 @@
           <%= render :partial => 'home/user_table', :locals => { users: @users_unconfirmed,  show_links: true } %>
         </div>
         <div class="ui bottom attached tab segment" data-tab="third">
+            
+        <div>
+            <p><%= link_to 'Trabalhos', user_poster_path(format: :pdf), class: 'ui button positive' %>
+            <%= link_to 'Usuários confirmados', users_confirmeds_path(format: :pdf), class: 'ui button positive' %></p>
+        </div>
             <table class="ui fixed single line celled table">
                 <thead>
                     <tr>
@@ -55,10 +60,6 @@
             
         </div>
         
-        <div>
-            <p><%= link_to 'Trabalhos', user_poster_path(format: :pdf), class: 'ui button positive' %>
-            <%= link_to 'Usuários confirmados', users_confirmeds_path(format: :pdf), class: 'ui button positive' %></p>
-        </div>
         <div class="ui bottom attached tab segment" data-tab="four">
            <table class="ui fixed single line celled table">
                 <thead>
