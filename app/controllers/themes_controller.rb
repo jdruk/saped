@@ -1,5 +1,5 @@
 class ThemesController < ApplicationController
-  before_action :set_theme, only: [:show, :edit, :update, :destroy]
+  before_action :set_theme, only: [:show, :edit, :update, :destroy, :list]
 
   # GET /themes
   # GET /themes.json
@@ -7,6 +7,15 @@ class ThemesController < ApplicationController
     @themes = Theme.all
   end
 
+  def list
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render template: 'themes/reporte', pdf: 'Reporte' 
+      end
+    end
+  end
+    
   # GET /themes/1
   # GET /themes/1.json
   def show
@@ -60,7 +69,9 @@ class ThemesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_theme

@@ -10,34 +10,25 @@
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css" integrity="sha256-8CEI/ltDBxfGb0lev/b4YiRbQSPlllT89ukpFKC3Frg=" crossorigin="anonymous" / -->
   </head>
   <body onload='number_pages'>
-    
-<h3>Pôsteres</h3>
+    <h3>Lista geral de pagantes</h3>
     <table class="table">
         <thead>
             <tr>
-                <th>Título</th>
-                <th>Autor1</th>
-                <th>Cpf</th>
-                <th>Autor2</th>
-                <th>Cpf</th>
-                <th>Autor3</th>
-                <th>Cpf</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Filiação</th>
             </tr>
         </thead>
         <tbody>
-            <% @theme.users.each do |user| %>
+            <% User.confirmeds.each do |user| %>
                 <tr>
-                    <td><%= user.article_title.upcase %></td>
-                    <td><%= user.author_one.upcase %></td>
-                    <td><%= user.author_one_cpf.upcase %></td>
-                    <td><%= user.author_two.upcase %></td>
-                    <td><%= user.author_two_cpf.upcase %></td>
-                    <td><%= user.author_three.upcase %></td>
-                    <td><%= user.author_three.upcase %></td>
+                    <td><%= user.name.upcase %></td>
+                    <td><%= user.cpf.upcase %></td>
+                    <td><%= user.student_ufpi %></td>
                 </tr>
             <% end %>
         </tbody>
     </table>
+
   </body>
 </html>
-

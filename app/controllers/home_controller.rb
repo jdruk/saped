@@ -47,9 +47,21 @@ class HomeController < ApplicationController
   end
   
   def user_poster
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render template: 'home/reporte', pdf: 'Reporte' 
+      end
+    end
   end 
   
   def geral
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render template: 'home/geral', pdf: 'Reporte' 
+      end
+    end
   end
   
   def aprove_article

@@ -15,7 +15,11 @@ class User < ActiveRecord::Base
   belongs_to :theme
   
   def student_ufpi
-   matriculation
+   if matriculation.length > 0 or matriculation != ""
+      matriculation
+   else
+     institution
+   end
   end
   
   def self.articles

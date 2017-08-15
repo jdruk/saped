@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'geral/list/users/paid', to: 'home#geral', as: :users_confirmeds
   post 'negative_article/', to: 'home#negative_article', as: :negative_article
   
+  get 'theme/list/:id', to: 'themes#list', as: :theme_list
+  
 end
