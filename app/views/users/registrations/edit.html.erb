@@ -1,43 +1,100 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="ui centered grid container segment" style='border-right: thick solid #fff;'>
+    <div class="five wide column">
+      <h2>Editar perfil</h2>
+      
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+      
+       <div class="field">
+      <%= f.label 'Nome' %><br />
+      <%= f.text_field :name %>
+    </div>
+    
+    <div class="field">
+      <%= f.label 'CPF - apenas números!' %><br />
+      <%= f.text_field :cpf %>
+    </div>
+        
+    <div id="matricula" class="field" style="display: none;">
+      <%= f.label "Número da matrícula" %><br />
+      <%= f.text_field :matriculation %>
+    </div>
+    
+    <div class="field">
+      <div class="inline fields">
+      <label for="discente">Discente da UFPI?</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input id='discente_sim' name="discente" tabindex="0" class="hidden" type="radio" >
+          <label>Sim</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input name="discente" tabindex="0" class="hidden" type="radio" checked="" >
+          <label>Não</label>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script>
+      $('.ui.radio.checkbox').checkbox();
+      
+      $( ".ui.radio.checkbox" ).change(function() {
+        if($("#discente_sim").is(":checked")){
+          $("#matricula").css("display", "initial");
+        }else{
+          $("#matricula").css("display", 'none');
+        }
+      });
+      
+    </script>
+    
+    
+         <!-- tem que informar os tipos com popup ou algo do tipo -->
+        <div id="participacao" class="field" >
+          <%= f.label 'Tipo de participação'  %><small> Deixe simples caso não vá apresentar trabalho no evento</small><br />
+          <%= f.collection_select(:participation_id, Participation.all, :id, :name, {prompt: 'Tipo de participacao'}, {:class=>'ui dropdown'}) %>
+        </div> 
+        <script>
+          $( "#user_participation_id" ).change( function(){
+            var value = $( "#user_participation_id" ).val();
+            // valores acima disso representa apresentação e necessariamente um tema
+            if(value == 3){
+              $("#tema").css("display", "initial");
+            }else{
+              $("#tema").css("display", 'none');
+            } 
+          });
+          
+        </script>
+    
+        <div id="tema" class="field" style="display: none;" >
+          <%= f.label 'Grupo Temático' %><br />
+          <%= f.collection_select(:theme_id, Theme.all, :id, :name, {prompt: 'Tema da apresentação'}, {:class=>'ui dropdown'}) %>
+        </div>
+        
+        <div class="field">
+          <%= f.label 'Mini-curso' %><br />
+          <%= f.collection_select(:course_id, Course.avalaible, :id, :name, { prompt: 'Curso'}, {:class=>'ui dropdown'}) %>
+        </div>
+    
+        <div class="actions">
+          <%= f.submit "Atualizar" %>
+        </div>
+      <% end %>
+    </div>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<script>
+  $('select.dropdown').dropdown();
+</script>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<%= render 'layouts/user' %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+<% content_for :head do %>      
+  .footer{
+    display: none;
+  }
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

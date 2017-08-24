@@ -32,7 +32,7 @@
           <%= render 'layouts/alert_messages' %>
           Para download das normas de submissão de trabalhos <a href="edital.pdf" class="ui tiny button "> CLIQUE AQUI</a>.
       </p>
-      
+      <p>Editar perfil <%= link_to 'editar',edit_user_registration_path %></p>
       <% unless current_user.article_url  %>
         <%= render('article') unless current_user.participation_id == 1 %>
       <% end %>

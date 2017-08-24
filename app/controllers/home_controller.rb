@@ -64,6 +64,15 @@ class HomeController < ApplicationController
     end
   end
   
+  def termo 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render template: 'home/termo', pdf: 'Termo' 
+      end
+    end
+  end
+  
   def aprove_article
     @user.article_aproved= true;
     if @user.save
