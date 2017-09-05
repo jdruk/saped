@@ -43,6 +43,6 @@ class User < ActiveRecord::Base
   end
   
   def self.confirmeds
-    User.where(pay: true)
+    User.order(:name).where(pay: true)
   end
 end
