@@ -27,6 +27,8 @@ Cézar Sousa'
 Course.create! name: 'Scratch com Latex', panelist: ' Prof. Mestre Algeir Sampaio'
 Course.create! name: 'Arte e Preservação Ambiental – Beleza Permanente', panelist: ' Rociania Barreto'
 
+Course.create! name: 'Aprender a aprender na prática: a neurociência da aprendizagem', panelist: 'Profª Mestre
+Patrícia Barros'
 
 puts "Temas para apresentação oral"
 
