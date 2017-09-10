@@ -11,7 +11,7 @@ class ThemesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render template: 'themes/reporte', pdf: 'Reporte' 
+        render template: 'themes/reporte', pdf: 'Reporte', orientation: 'Landscape'
       end
     end
   end
