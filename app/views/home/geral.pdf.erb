@@ -10,26 +10,26 @@
     <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.css" integrity="sha256-8CEI/ltDBxfGb0lev/b4YiRbQSPlllT89ukpFKC3Frg=" crossorigin="anonymous" / -->
   </head>
   <body onload='number_pages'>
-    <h3>Lista geral de pagantes - Quantidade : <%= User.confirmeds.count %></h3>
-    
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Filiação</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% User.confirmeds.each do |user| %>
+    <div id="content">
+        <h3>Lista geral de pagantes - Quantidade : <%= User.confirmeds.count %></h3>
+        <table class="table">
+            <thead>
                 <tr>
-                    <td><%= user.name.upcase %></td>
-                    <td><%= user.cpf.upcase %></td>
-                    <td><%= user.student_ufpi %></td>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Filiação</th>
                 </tr>
-            <% end %>
-        </tbody>
-    </table>
-
+            </thead>
+            <tbody>
+                <% User.confirmeds.each do |user| %>
+                    <tr>
+                        <td><%= user.name.upcase %></td>
+                        <td><%= user.cpf.upcase %></td>
+                        <td><%= user.student_ufpi %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
   </body>
 </html>
