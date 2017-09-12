@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
   
   def self.banners
-    User.articles.where(participation_id: 3)
+    User.articles.where(participation_id: 3).where(article_aproved: true)
   end
   
   def self.poster
