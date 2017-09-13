@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   # Relacionamentos
   belongs_to :course
   belongs_to :theme
+  belongs_to :participation
   
   def student_ufpi
    if matriculation.length > 0 or matriculation != ""
@@ -34,12 +35,19 @@ class User < ActiveRecord::Base
     end
   end
   
-  def self.banners
-    User.articles.where(participation_id: 3).where(article_aproved: true)
+  def self.poster
+    # Participation.create! name: 'Apresentar pôster'
+    # Participation.create! name: 'Apresentar trabalho oral'
+    User.articles.where(
+      participation: Participation.where(
+        name: 'Apresentar pôster').first)
+      .where(article_aproved: true)
   end
   
-  def self.poster
-    User.articles.where(participation_id: 2).where(article_aproved: true)
+  def self.trabalho_oral
+    User.articles.where(
+      participation: Participation.where(name: 'Apresentar trabalho oral').first)
+      .where(article_aproved: true)
   end
   
   def self.confirmeds
