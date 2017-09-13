@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   end
   
   def self.poster
-    User.articles.where(participation_id: 2)
+    User.articles.where(participation_id: 2).where(article_aproved: true)
   end
   
   def self.confirmeds
