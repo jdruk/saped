@@ -25,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <% @theme.users.each do |user| %>
+            <% @theme.users.where(article_aproved: true).each do |user| %>
                 <tr>
                     <td><%= user.article_title.upcase %></td>
                     <td><%= user.author_one.upcase %></td>
