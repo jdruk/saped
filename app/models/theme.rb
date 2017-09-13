@@ -1,7 +1,7 @@
 class Theme < ActiveRecord::Base
     
     def users
-        User.trabalho_oral(theme: self, pay: true).where.not(:article=> nil)
+        User.trabalho_oral.where(theme: self, pay: true).where.not(:article=> nil)
     end
     
     def self.available
