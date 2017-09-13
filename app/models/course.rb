@@ -15,6 +15,7 @@ class Course < ActiveRecord::Base
             end
             c << Course.valida(course, 33)
         end
+        c.delete(nil)
         return c
     end
     
