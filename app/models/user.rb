@@ -41,13 +41,11 @@ class User < ActiveRecord::Base
     User.articles.where(
       participation: Participation.where(
         name: 'Apresentar pôster').first)
-      .where(article_aproved: true)
   end
   
   def self.trabalho_oral
     User.articles.where(
       participation: Participation.where(name: 'Apresentar trabalho oral').first)
-      .where(article_aproved: true)
   end
   
   def self.confirmeds
