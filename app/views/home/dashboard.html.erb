@@ -35,8 +35,8 @@
       </p>
       <p>Mudanças de minicurso ou demais atualizações da sua inscrição click em <%= link_to 'Perfil',edit_user_registration_path, class:'ui button teal' %></p>
       <% unless current_user.article_url  %>
-        <p>Caso  esteja enfrentando problemas no envio de trabalhos, envie um email com seu trabalho para saped-ufpi.cientifica@hotmail.com com o seu trabalho em anexo</p>
-        <%= render('article') unless current_user.participation_id == 1 %>
+        <!-- p>Caso  esteja enfrentando problemas no envio de trabalhos, envie um email com seu trabalho para saped-ufpi.cientifica@hotmail.com com o seu trabalho em anexo</p -->
+        <%# render('article') unless current_user.participation_id == 1 %>
       <% end %>
     </div>
   <div class="ui hidden divider"></div>
