@@ -7,7 +7,7 @@ class Course < ActiveRecord::Base
         minicurso_rociane = Course.where name: 'Arte e Preservação Ambiental – Beleza Permanente'
         minicurso_patricia = Course.where name: 'Aprender a aprender na prática: a neurociência da aprendizagem'
         Course.all.each do |course|
-            if course.equal?(Course.first)
+            if course.equal?(Course.where(name: 'Nenhum').first)
                 c << course
             end
             if course.equal?(minicurso_rociane) or course.equal?(minicurso_patricia)
