@@ -4,16 +4,21 @@ class Course < ActiveRecord::Base
     
     def self.avalaible
         c = Array.new
-        minicurso_rociane = Course.where name: 'Arte e Preservação Ambiental – Beleza Permanente'
-        minicurso_patricia = Course.where name: 'Aprender a aprender na prática: a neurociência da aprendizagem'
+        minicurso_rociane = Course.where(name: 'Arte e Preservação Ambiental – Beleza Permanente').first
+        minicurso_patricia = Course.where(name: 'Aprender a aprender na prática: a neurociência da aprendizagem').first
+        minicurso_nenhum = Course.where(name: 'Nenhum').first
         Course.all.each do |course|
-            if course.equal?(Course.where(name: 'Nenhum').first)
+            if course.eql?(minicurso_nenhum)
                 c << course
+                puts " \n validando  #{course.name} "
             end
-            if course.equal?(minicurso_rociane) or course.equal?(minicurso_patricia)
+            if course.eql?(minicurso_rociane) or course.eql?(minicurso_patricia)
+                puts "\n validando com 18 #{course.name}"
                 c << Course.valida(course, 18)
-            end
-            c << Course.valida(course, 33)
+            else
+                c << Course.valida(course, 33)
+                puts '33'
+            end 
         end
         c.delete(nil)
         return c
