@@ -12,6 +12,10 @@
         tr, td {
             font-size:9px !important;
         }
+        tbody{
+             padding-top: 2cm;
+        }
+        
     </style>
   </head>
   <body onload='number_pages'>
@@ -29,9 +33,9 @@
                 <th>Cpf</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="">
             <% User.poster.each do |user| %>
-                <tr>
+                <tr style="margin-top:12px">
                     <td style="font-size:9px;"><%= user.article_title.upcase %></td>
                     <td><%= user.author_one.upcase %></td>
                     <td><%= user.author_one_cpf.upcase %></td>

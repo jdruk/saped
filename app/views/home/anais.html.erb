@@ -1,0 +1,32 @@
+<div class="ui text  segment" style="margin-top:3em;min-height:780px;">
+    <iframe src='anais.pdf' width="1024" height="500" style="border: none;margin-left:9em;"> </iframe>
+    <div class="ui grid "  style="margin-top:3em;" >
+        <h4 style="margin-left:30em;">Download dos trabalhos individualmente </h4>
+        <table class="ui fixed single line celled table" style="margin-top:3em;width:1024px;margin-left:10em;">
+            <thead>
+                <tr>
+                    <th>Título do trabalho</th>
+                    <th>Arquivo</th>
+                </tr>
+                    </thead>
+                <tbody>
+                    <% User.articles.each do |user|  %>    
+                        <tr>
+                            <td>
+                                <%= user.article_title.upcase unless user.article_title.nil?  %>
+                            </td>
+                            <td>
+                                <%= link_to 'Download', user.article_url, class: 'ui button ' %>  
+                            </td>
+                                
+                        </tr>
+                    <% end %>
+                </tbody>
+        </table>
+    </div>
+</div> <% content_for :footer do %>
+        <script>
+            $("#footer").css("display", 'none');
+            $("#hide-menu").css("display", 'none');
+        </script>
+    <% end %>

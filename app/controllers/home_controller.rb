@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
   before_action :set_user, only: [:confirme_user, :aprove_article]
-  layout 'dashboard', except: :index
+  layout 'dashboard', except: [:index, :expediente, :anais]
   
+  def expediente
+    render template: 'home/expediente'
+  end
   
   def index
     if user_signed_in?
@@ -87,4 +90,7 @@ class HomeController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def anais
+    
+  end
 end

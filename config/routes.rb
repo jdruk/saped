@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   
   get 'theme/list/:id', to: 'themes#list', as: :theme_list
   
+  get 'expediente', to: 'home#expediente', as: :expediente
+  get 'an', to: 'home#anais', as: :anais
 end

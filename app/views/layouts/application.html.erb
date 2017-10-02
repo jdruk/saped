@@ -233,9 +233,13 @@
   <div class="ui large top menu fixed " style='background-color:#FFC70E;'>
     <div class="ui container mainmenu">
       <a class="active item" href="/">Home</a>
-      <a class="item" href="#evento">Evento</a>
-      <a class="item" href="#minicursos">Minicursos</a>
-      <a class="item" href="#palestrantes">Palestrantes</a>
+      <div id="hide-menu" class="ui menu" style='background-color:#FFC70E;' >
+        <a class="item" href="#evento">Evento</a>
+        <a class="item" href="#minicursos">Minicursos</a>
+        <a class="item" href="#palestrantes">Palestrantes</a>
+      </div>
+      <a class="item" href="expediente">Expediente</a>
+      <a class="item" href="an">anais</a>
       <div class="right menu">
         <div id="login" class="item">
           <a class="ui button">Log in</a>
@@ -251,7 +255,7 @@
   
   <%= yield %>
 
-  <div class='footer'>
+  <div id="footer" class='footer'>
     <div class="rodapeimg"> </div>
     <div class="rodape"> </div>
     <div class="linhaesq"> </div>   
@@ -260,5 +264,6 @@
   <!-- Modal user -->
   <%= render 'layouts/user' %> 
 </div>
+<%= yield :footer %>
 </body>
 </html>
