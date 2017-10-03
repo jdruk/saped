@@ -61,6 +61,7 @@ class HomeController < ApplicationController
   def geral
     respond_to do |format|
       format.html
+      format.xml { render :xml => User.confirmeds  } 
       format.pdf do
         render template: 'home/geral', pdf: 'Reporte' 
       end
