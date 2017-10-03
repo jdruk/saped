@@ -35,4 +35,3 @@ group :development do
   # Add this if you're using rbenv
   gem 'capistrano-rbenv', '~> 2.1'
 end
-gem 'nokogiri', '~> 1.6.6.4'

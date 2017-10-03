@@ -214,7 +214,6 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  nokogiri (~> 1.6.6.4)
   pg
   pundit
   rails (= 4.2.6)
