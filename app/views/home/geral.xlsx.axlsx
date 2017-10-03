@@ -8,6 +8,6 @@ wb.add_worksheet(name: "Users") do |sheet|
   
   # each user is a row on your spreadsheet
   User.confirmeds.each do |user|
-    sheet.add_row [ user.name , user.cpf, user.student_ufpi]
+    sheet.add_row [ user.name_formatado , user.cpf_formatado, user.student_ufpi]
   end
 end

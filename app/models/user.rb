@@ -51,4 +51,13 @@ class User < ActiveRecord::Base
   def self.confirmeds
     User.order(:name).where(pay: true)
   end
+  
+  def cpf_formatado
+    a = cpf.gsub /[^\d]/ , ''  
+    a[0,3] + '.' + a[3,3] + '.' + a[6,3] + '-' + a[9,2]
+  end
+  
+  def name_formatado
+    name.upcase
+  end
 end
