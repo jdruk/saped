@@ -35,3 +35,7 @@ group :development do
   # Add this if you're using rbenv
   gem 'capistrano-rbenv', '~> 2.1'
 end
+
+gem 'rubyzip', '= 1.0.0'
+gem 'axlsx', '= 2.0.1'
+gem 'axlsx_rails'

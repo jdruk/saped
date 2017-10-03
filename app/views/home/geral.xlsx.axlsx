@@ -1,0 +1,13 @@
+# app/views/users/index.
+
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Users") do |sheet|
+  # this is the head row of your spreadsheet
+  sheet.add_row %w( nome email cpf filiacao)
+  
+  # each user is a row on your spreadsheet
+  User.confirmeds.each do |user|
+    sheet.add_row [ user.name, user.email, user.cpf, user.student_ufpi]
+  end
+end
