@@ -231,14 +231,13 @@
 <body>
   <div class='my-container'>
   <div class="ui large top menu fixed " style='background-color:#FFC70E;'>
-    <div class="ui container mainmenu">
+    <div style="margin-left:-5em;" class="ui container mainmenu">
       <a class="active item" href="/">Home</a>
       <div id="hide-menu" class="ui menu" style='background-color:#FFC70E;' >
-        <a class="item" href="#evento">Evento</a>
-        <a class="item" href="#minicursos">Minicursos</a>
-        <a class="item" href="#palestrantes">Palestrantes</a>
+        <a class="item" href="#evento">Apresentação</a>
+        <a class="item" href="edital.pdf">Normas para Publicação</a>
       </div>
-      <a class="item" href="expediente">Expediente</a>
+      <a class="item" href="expediente">Corpo Editorial</a>
       <a class="item" href="an">anais</a>
       <div class="right menu">
         <div id="login" class="item">
@@ -257,13 +256,17 @@
 
   <div id="footer" class='footer'>
     <div class="rodapeimg"> </div>
-    <div class="rodape"> </div>
-    <div class="linhaesq"> </div>   
+    <div class="rodape"> <p style="margin-left:22em;margin-top:3em;color:#fff;index-z:10;font-size:16px;" >
+      Rua Cícero Duarte, 905. Junco. CEP 64.607-670. Picos-Piaui Tel: 89 3422 2058<br>
+    </p></div>
+    <div class="linhaesq"> </div>  
+    
   </div>
-  
+    
   <!-- Modal user -->
   <%= render 'layouts/user' %> 
 </div>
 <%= yield :footer %>
 </body>
+
 </html>
